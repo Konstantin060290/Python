@@ -91,8 +91,5 @@
 
 print('Введите конец диапазона для вывода простых чисел:')
 n = int(input())
-for i in range(1, int(n)+1):
-     for k in range (2, int(n)):
-        if int(i)%int(k)!=0 and int(i)%2 != 0 :
-            print(i)
-            break
+numbers = [x for x in range(1,n+1) if [x%y for y in range(2,x)].count(0) ==0]
+print (numbers)
